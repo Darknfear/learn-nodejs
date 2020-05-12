@@ -1,0 +1,37 @@
+<section>
+    <div class="title-page">
+        Posts
+        <a class="button btn-add" href="/admin/post/new">Add new post</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="tb-head">
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Author</th>
+                <th>Creat Time</th>
+                <th>Update Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data && data.posts) {%>
+            <% for(let i = 0; i < data.posts.length; i++) {%>
+            <tr>
+                <td><%= data.posts[i].id%></td>
+                <td><%= data.posts[i].title%></td>
+                <td><%= data.posts[i].content%></td>
+                <td><%= data.posts[i].author%></td>
+                <td><%= data.posts[i].created_at%></td>
+                <td><%= data.posts[i].updated_at%></td>
+                <td>
+                    <a href="/admin/post/edit/<%= data.posts[i].id%>" class="button btn-primary">Edit</a>
+                    <button class="button btn-danger" id="btn-delete" post_id="<%= data.posts[i].id%>">Delete</button>
+                </td>
+            </tr>
+            <%}%>
+            <%}%>
+        </tbody>
+    </table>
+</section>

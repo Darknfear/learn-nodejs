@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: arial, sans-serif;
+}
+nav {
+  padding: 15px 0px;
+  border-bottom: 0.5px solid #dddddd;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 15px 15px;
+  font-weight: bold;
+  opacity: 0.5;
+  text-align: center;
+}
+.nav-link:link {
+  color: black;
+}
+.nav-link:visited {
+  color: black;
+}
+.nav-link:hover {
+  background: lightslategray;
+}
+.nav-link:active {
+  background: gray;
+}
+.nav-link.selected {
+  background: gray;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+td {
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+.title-page {
+  font-size: 25px;
+  color: black;
+  background: #dddddd;
+  padding: 20px;
+  font-weight: bold;
+  opacity: 0.5;
+  border: 1px solid #dddddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button {
+  margin: 10px;
+  padding: 10px 20px;
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.btn-add {
+  background: rgb(19, 19, 224);
+}
+.btn-primary {
+  background-color: green;
+}
+.btn-danger {
+  background: red;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleSheet" href="/css/admin/new.css">
+    <title>New</title>
+</head>
+
+<body>
+    <%- include('../layout/header')-%>
+    <section class="section-form">
+        <div class="title-form">Add new post</div>
+
+        <% if(data && data.error) {%>
+            <div class="alert">
+                <strong><%= data.error%></strong>
+            </div>
+        <%}%>
+            
+            <form method="POST" action="/admin/post/new" class="form-add">
+                <label>Title</label>
+                <input type="text" class="input" name="title" placeholder="title">
+                <label>Content</label>
+                <textarea class="input input-area" name="content" placeholder="content"></textarea>
+                <label>Author</label>
+                <input type="text" class="input" name="author" placeholder="author">
+                <input type="submit" value="add" class="button btn-add">
+            </form>   
+    </section>
+</body>
+
+</html>
