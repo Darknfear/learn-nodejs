@@ -5,6 +5,7 @@ const {
   updatePostWithData,
   deletePostById,
 } = require("../Models/admin");
+const {getAllUser} = require("../Models/user");
 const adminPage = async (req, res) => {
   try {
     const result = await getAllPosts();
@@ -103,6 +104,29 @@ const deletePost = async (req, res) => {
   }
 };
 
+const getlistUser = async (req, res) => {
+  try {
+    const result = await getAllUser();
+    if(result) {
+      const data = {
+        users: result,
+        error: false,
+      }
+      return res.render("admin/user/user", {data: data});
+    } else {
+      const data = {
+        error: "could not get user info",
+      }
+      return res.render("admin/user/user", {data: data});
+    }
+  } catch (error) {
+    const data = {
+      error: "could not get user info",
+    }
+    return res.render("admin/user/user", {data: data});
+  }
+}
+
 module.exports = {
   adminPage,
   getNew,
@@ -110,4 +134,5 @@ module.exports = {
   getEditPost,
   updatePost,
   deletePost,
+  getlistUser,
 };

@@ -20,8 +20,19 @@ const checkUser = email => {
       else resolve(result);
     })
   })
+};
+
+const getAllUser = () => {
+  return new Promise((resolve, reject) => {
+    const stringQuery = "SELECT * FROM users";
+    connection.query(stringQuery,(err, result) => {
+      if(err) reject(err);
+      else resolve(result);
+    });
+  });
 }
 module.exports = {
   addUser,
-  checkUser
+  checkUser,
+  getAllUser,
 }

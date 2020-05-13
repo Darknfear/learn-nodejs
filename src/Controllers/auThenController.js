@@ -19,7 +19,7 @@ const signUpPost = async (req, res) => {
       last_name: lastname,
     };
     const result = await addUser(user);
-    if(result) res.redirect("signin");
+    if(result) res.redirect("/SignIn");
     else res.send("dang ki that bai")
   } catch (error) {
     console.log("err ", error)
@@ -35,8 +35,7 @@ const signInPost = async (req, res) => {
       const result = await comparePass(password, item.password);
       if(result) {
         req.session.user = item;
-        console.log("session: ",req.session.user)
-        return res.send("login thanh cong")
+        return res.redirect("/admin/post");
       }
       else return res.send("sai ten dang nhap hoac mat khau");
     } else return res.status(404).send("not found");

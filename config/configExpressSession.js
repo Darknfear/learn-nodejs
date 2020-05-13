@@ -7,7 +7,7 @@ const configSession = (app) => {
       secret: config.get("secret_key"),
       resave: false,
       saveUninitialized: true,
-      cookie: { secure: true },
+      cookie: { secure: false },
     })
   );
 };
